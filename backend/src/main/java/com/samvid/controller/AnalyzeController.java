@@ -1,9 +1,9 @@
 package com.samvid.controller;
-
+import jakarta.validation.Valid;
 import com.samvid.dto.AnalyzeRequest;
 import com.samvid.service.AnalyzeService;
 import org.springframework.web.bind.annotation.*;
-
+import com.samvid.model.AnalysisResult;
 import java.util.Map;
 
 @RestController
@@ -17,12 +17,7 @@ public class AnalyzeController {
     }
 
     @PostMapping("/analyze")
-    public Map<String, String> analyze(@RequestBody AnalyzeRequest request) {
-
-        String result = analyzeService.analyze(request.getContractText());
-
-        return Map.of(
-                "message", result
-        );
+    public AnalysisResult analyze(@Valid @RequestBody AnalyzeRequest request) {
+        return analyzeService.analyze(request.getContractText());
     }
 }
