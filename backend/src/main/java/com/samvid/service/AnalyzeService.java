@@ -1,12 +1,9 @@
 package com.samvid.service;
-
 import com.samvid.model.AnalysisResult;
 import com.samvid.model.Clause;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
-
 @Service
 public class AnalyzeService {
 
@@ -20,7 +17,8 @@ public class AnalyzeService {
             clauses.add(new Clause(
                     "Automatic Renewal",
                     "Medium",
-                    "This contract renews automatically every year."
+                    "This contract renews automatically.",
+                    "Review the renewal terms and consider adding a cancellation notice period."
             ));
         }
 
@@ -28,7 +26,8 @@ public class AnalyzeService {
             clauses.add(new Clause(
                     "Termination",
                     "High",
-                    "This contract contains a termination clause."
+                    "The contract contains a termination clause.",
+                    "Ensure the termination conditions are fair and clearly defined."
             ));
         }
 
@@ -36,29 +35,47 @@ public class AnalyzeService {
             clauses.add(new Clause(
                     "Penalty",
                     "High",
-                    "This contract contains a penalty clause."
+                    "A penalty clause has been identified.",
+                    "Negotiate to reduce or remove excessive penalties."
             ));
         }
 
         if (clauses.isEmpty()) {
             clauses.add(new Clause(
-                    "None",
+                    "General Review",
                     "Low",
-                    "No obvious risky clauses detected."
+                    "No obvious risky clauses detected.",
+                    "Consider a full legal review before signing."
             ));
         }
 
         String overallRisk = "Low";
 
         for (Clause clause : clauses) {
-            if ("High".equals(clause.getRiskLevel())) {
+            if ("High".equalsIgnoreCase(clause.getRisk())) {
                 overallRisk = "High";
                 break;
-            } else if ("Medium".equals(clause.getRiskLevel())) {
+            } else if ("Medium".equalsIgnoreCase(clause.getRisk())) {
                 overallRisk = "Medium";
             }
         }
 
-        return new AnalysisResult(overallRisk, clauses);
+        List<String> missingClauses = List.of(
+                "Confidentiality",
+                "Dispute Resolution"
+        );
+
+        List<String> negotiationTips = List.of(
+                "Clarify ambiguous terms.",
+                "Limit liability where possible."
+        );
+
+        return new AnalysisResult(
+                overallRisk,
+                "Basic keyword-based analysis completed.",
+                clauses,
+                missingClauses,
+                negotiationTips
+        );
     }
 }

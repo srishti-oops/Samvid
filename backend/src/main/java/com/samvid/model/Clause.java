@@ -2,40 +2,50 @@ package com.samvid.model;
 
 public class Clause {
 
-    private String type;
-    private String riskLevel;
-    private String message;
+    private String name;
+    private String risk;
+    private String explanation;
+    private String recommendation;
 
     public Clause() {
     }
 
-    public Clause(String type, String riskLevel, String message) {
-        this.type = type;
-        this.riskLevel = riskLevel;
-        this.message = message;
+    public Clause(String name, String risk, String explanation, String recommendation) {
+        this.name = name;
+        this.risk = risk;
+        this.explanation = explanation;
+        this.recommendation = recommendation;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public String getRiskLevel() {
-        return riskLevel;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getMessage() {
-        return message;
+    public String getRisk() {
+        return risk;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRisk(String risk) {
+        this.risk = risk;
     }
 
-    public void setRiskLevel(String riskLevel) {
-        this.riskLevel = riskLevel;
+    public String getExplanation() {
+        return explanation;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setExplanation(String explanation) {
+        this.explanation = explanation;
+    }
+
+    public String getRecommendation() {
+        return recommendation;
+    }
+
+    public void setRecommendation(String recommendation) {
+        this.recommendation = recommendation;
     }
 }
