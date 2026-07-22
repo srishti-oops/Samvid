@@ -1,41 +1,33 @@
 package com.samvid.model;
 
+import java.util.List;
+
 public class AnalysisResult {
 
-    private String riskLevel;
-    private String clause;
-    private String message;
+    private String overallRisk;
+    private List<Clause> clauses;
 
     public AnalysisResult() {
     }
 
-    public AnalysisResult(String riskLevel, String clause, String message) {
-        this.riskLevel = riskLevel;
-        this.clause = clause;
-        this.message = message;
+    public AnalysisResult(String overallRisk, List<Clause> clauses) {
+        this.overallRisk = overallRisk;
+        this.clauses = clauses;
     }
 
-    public String getRiskLevel() {
-        return riskLevel;
+    public String getOverallRisk() {
+        return overallRisk;
     }
 
-    public void setRiskLevel(String riskLevel) {
-        this.riskLevel = riskLevel;
+    public void setOverallRisk(String overallRisk) {
+        this.overallRisk = overallRisk;
     }
 
-    public String getClause() {
-        return clause;
+    public List<Clause> getClauses() {
+        return clauses;
     }
 
-    public void setClause(String clause) {
-        this.clause = clause;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setClauses(List<Clause> clauses) {
+        this.clauses = clauses;
     }
 }
