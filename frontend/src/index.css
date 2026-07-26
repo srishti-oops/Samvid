@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Kameron", serif;
+  --font-body: "Karla", sans-serif;
+
+  --color-background: #F5F7FA;
+  --color-surface: #FFFFFF;
+  --color-text: #17212B;
+  --color-muted: #5F6B76;
+  --color-border: #D9E1E8;
+  --color-primary: #1F6FEB;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html {
+    scroll-behavior: smooth;
+}
