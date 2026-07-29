@@ -23,7 +23,7 @@ public class OpenApiConfig {
                                 .contact(
                                         new Contact()
                                                 .name("Srishti Singh")
-                                                .email("your-email@example.com")
+                                                .email("if.srishti@gmail.com")
                                 )
                 );
     }
