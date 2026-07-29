@@ -10,7 +10,12 @@ public class Clause {
     public Clause() {
     }
 
-    public Clause(String name, String risk, String explanation, String recommendation) {
+    public Clause(
+            String name,
+            String risk,
+            String explanation,
+            String recommendation
+    ) {
         this.name = name;
         this.risk = risk;
         this.explanation = explanation;
