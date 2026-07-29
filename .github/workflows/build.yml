@@ -4,20 +4,16 @@ on:
   push:
     branches:
       - main
-      - master
 
   pull_request:
     branches:
       - main
-      - master
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -27,9 +23,12 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
+          cache-dependency-path: backend/pom.xml
 
       - name: Make Maven Wrapper Executable
+        working-directory: backend
         run: chmod +x mvnw
 
-      - name: Build Project
+      - name: Build Backend
+        working-directory: backend
         run: ./mvnw clean package -DskipTests
