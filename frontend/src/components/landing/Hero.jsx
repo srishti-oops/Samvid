@@ -1,4 +1,5 @@
 import Navbar from "../layout/Navbar";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   Shield,
@@ -6,6 +7,7 @@ import {
   Sparkles,
 } from "lucide-react";
 export default function Hero() {
+    const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -39,7 +41,7 @@ export default function Hero() {
 
           <div>
 
-            <span className="font-['Karla'] text-sm font-semibold uppercase tracking-[0.20em] text-[#384B8F]">
+            <span className="font-['Karla'] text-sm font-semibold uppercase tracking-[0.27em] text-[#384B8F]">
               AI-powered legal document intelligence
             </span>
 
@@ -60,12 +62,24 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-4">
 
-              <button className="inline-flex items-center gap-2 rounded-lg bg-[#384B8F] px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2F417F] hover:shadow-lg">
-                Analyze Agreement
+              <button
+                        onClick={() => navigate("/login")}
+                className="inline-flex items-center gap-2 rounded-lg bg-[#384B8F] px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-[#2F417F]"
+              >
+                Analyse agreements
                 <ArrowRight size={18} />
               </button>
 
-              <button className="rounded-lg border border-[#DCE3EB] bg-white px-8 py-4 font-semibold text-[#384B8F] transition-all duration-300 hover:border-[#384B8F] hover:bg-[#FAFBFD]">
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("how-it-works")
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                }}
+                className="rounded-lg border border-[#DCE3EB] bg-white px-8 py-4 font-semibold text-[#384B8F] transition-all duration-300 hover:border-[#384B8F] hover:bg-[#FAFBFD]"
+              >
                 How It Works
               </button>
 

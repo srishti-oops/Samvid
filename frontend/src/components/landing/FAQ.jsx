@@ -105,7 +105,7 @@ export default function FAQ() {
                       : "max-h-0"
                   }`}
                 >
-                  <p className="max-w-4xl pr-14 font-['Karla'] text-[17px] leading-8 text-[#5F6773]">
+                  <p className="max-w-7xl pr-14 font-['Karla'] text-[18px] leading-7 text-[#5F6773]">
                     {faq.answer}
                   </p>
                 </div>

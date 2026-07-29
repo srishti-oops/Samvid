@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
-
-export default function ReadyToBegin() {
+import { useNavigate } from "react-router-dom";
+export default function ReadyToBegin(){
+ const navigate = useNavigate();
   return (
     <section className="pt-12 pb-32">
       <div className="mx-auto flex max-w-4xl flex-col items-center px-8 text-center">
@@ -36,8 +37,10 @@ export default function ReadyToBegin() {
 
         {/* CTA */}
 
-        <button className="mt-12 inline-flex items-center gap-2 rounded-lg bg-[#384B8F] px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2F417F] hover:shadow-lg">
-            Take the first step
+        <button
+            onClick={() => navigate("/signup")}
+              className="mt-10 inline-flex items-center gap-1 rounded-lg bg-[#384B8F] px-7 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2F417F] hover:shadow-lg">
+           Upload a legal document
           <ArrowRight size={18} />
         </button>
       </div>

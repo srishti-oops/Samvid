@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 const links = [
   {
     label: "How It Works",
@@ -16,6 +16,7 @@ const links = [
 ];
 
 export default function Navbar() {
+const navigate = useNavigate();
   return (
     <header className="sticky top-0 z-50 border-b border-[#DCE3EB]/80 bg-[#F5F7FA]/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
@@ -26,7 +27,7 @@ export default function Navbar() {
           className="
             font-['Kameron']
             text-[38px]
-            font-bold
+
             tracking-[-0.03em]
             text-[#384B8F]
             transition-opacity
@@ -72,8 +73,8 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <a
-          href="#cta"
+        <button
+          onClick={() => navigate("/login")}
           className="
             inline-flex
             items-center
@@ -94,13 +95,13 @@ export default function Navbar() {
             hover:shadow-lg
           "
         >
-          Analyze Agreement
+          Login
 
           <ArrowRight
             size={17}
             strokeWidth={2.2}
           />
-        </a>
+        </button>
 
       </div>
     </header>
