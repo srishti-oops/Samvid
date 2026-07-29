@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8080/api";
+const API = "https://samvid.onrender.com/api";
 
 export async function analyzeDocument(file) {
     const formData = new FormData();
