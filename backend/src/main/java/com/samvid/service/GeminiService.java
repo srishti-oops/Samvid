@@ -17,7 +17,7 @@ public class GeminiService {
     private String apiKey;
 
     private static final String URL =
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent";
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent";
 
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper mapper = new ObjectMapper();
